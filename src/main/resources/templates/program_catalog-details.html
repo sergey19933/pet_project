@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Редактирование таблицы</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="container mt-5">
+    <div th:each="el : ${programCatal}" class="alert alert-info mt-2">
+        <b><p> Номер программы :</b> <span th:text="${el.number}"></span>
+        <b> Название ГОСТа : </b>  </b><span th:text="${el.nameProgram}"></span>
+        <a th:href="'/program_catalog/' + ${el.id} + '/edit'" class="btn btn-warning">Редактировать</a>
+        <form th:action="'/program_catalog/' + ${el.id} +'/remove'" method="Post">
+            <button class="btn btn-warning" type="submit">Удалить</button>
+        </form>
+        </p>
+    </div>
+</div>
+
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>

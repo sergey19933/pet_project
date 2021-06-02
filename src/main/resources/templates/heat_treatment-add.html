@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Добавить термообработку</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="container mt-5 mb-5">
+    <h1>Добавить термообработку</h1>
+
+    <form action="/heat_treatment/add" method="Post">
+        <input type="text" name="position" placeholder="Введите номер позиции" class="form-control"><br>
+        <input type="text" name="requirement" placeholder="Введите требование" class="form-control"><br>
+        <input type="text" name="orderr" placeholder="Введите заказ" class="form-control"><br>
+        <input type="text" name="size" placeholder="Введите размер" class="form-control"><br>
+        <input type="number" value="0" name="quantity" placeholder="Введите количество" class="form-control"><br>
+        <input type="text" name="gost" placeholder="Введите гост" class="form-control"><br>
+        <input type="text" name="hrc" placeholder="Введите твердость" class="form-control"><br>
+        <input type="text" name="steel" placeholder="Название стали" class="form-control"><br>
+        <input type="text" name="gone" placeholder="Ушло\Пришло" class="form-control"><br>
+        <button type="submit" class="btn btn-success"> Добавить термообработку</button>
+    </form>
+</div>
+
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>

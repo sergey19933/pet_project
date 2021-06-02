@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Таблица термообработки</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="container mt-2">
+    <h2>Таблица термообработки</h2>
+
+
+    <div th:each="el : ${heatTr}" class="chapter7">
+        <p><b> Позиция : </b> <span th:text="${el.position}"></span>
+            <b> Требование : </b>  </b><span th:text="${el.requirement}"></span>
+            <b> Заказ : </b><span th:text="${el.orderr}"></span>
+            <b> Размер : </b><span th:text="${el.size}"></span>
+            <b> Количество : </b><span th:text="${el.quantity}" value="0"></span>
+            <b> Гост : </b><span th:text="${el.gost}"></span>
+            <b> HRC : </b><span th:text="${el.hrc}"></span>
+            <b> Сталь : </b><span th:text="${el.steel}"></span>
+            <b> Ушло/Пришло : </b><span th:text="${el.gone}"></span>
+            <a th:href="'/heat_treatment/'+ ${el.id}" class="btn btn-warning">Детальнее</a></p>
+    </div>
+
+    <b> Всего деталей : </b><span th:text="${countDetail}"></span>
+
+
+</div>
+
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>

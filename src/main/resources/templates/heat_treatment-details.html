@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Редактирование таблицы</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="container mt-5">
+    <div th:each="el : ${heatTreatment}" class="alert alert-info mt-2">
+        <b><p> Позиция :</b> <span th:text="${el.position}"></span>
+        <b> Требование : </b>  </b><span th:text="${el.requirement}"></span>
+        <b> Заказ : </b><span th:text="${el.orderr}"></span>
+        <b> Размер : </b><span th:text="${el.size}"></span>
+        <b> Количество : </b><span th:text="${el.quantity}" value="0"></span>
+        <b> Гост : </b><span th:text="${el.gost}"></span>
+        <b> HRC : </b><span th:text="${el.hrc}"></span>
+        <b> Сталь : </b><span th:text="${el.steel}"></span>
+        <b> Ушло/Пришло : </b><span th:text="${el.gone}"></span>
+        <a th:href="'/heat_treatment/' + ${el.id} + '/edit'" class="btn btn-warning">Редактировать</a>
+        <form th:action="'/heat_treatment/' + ${el.id} +'/remove'" method="Post">
+            <button class="btn btn-warning" type="submit">Удалить</button>
+        </form>
+        </p>
+    </div>
+</div>
+
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>
