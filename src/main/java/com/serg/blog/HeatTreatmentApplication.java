@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 
 @SpringBootApplication
-@ComponentScan({"com.serg.blog"})
+@ComponentScan({"com.serg"})
 public class HeatTreatmentApplication {
 
     public static void main(String[] args) {
